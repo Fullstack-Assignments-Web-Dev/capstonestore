@@ -45,7 +45,7 @@
   /* max-height: 225px; */
   width: 425px;
   padding: 20px;
-  margin: 30px;
+  margin: 15px;
   float: left;
   display: flex;
   background-color: white;
@@ -71,9 +71,22 @@
   grid-template-areas: "prodCard";
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 800px) {
   .container {
   display: flex;
   flex-direction: column;
+  /* width: 60vw; */
   }
+  .prodCard {
+    width: 70vw;
+    padding: 15px;
+    margin: 5px;
+    float: left;
+    display: flex;
+    background-color: white;
+  }
+  .prodCard > img {
+    height: 100px;
+  }
+
 }
