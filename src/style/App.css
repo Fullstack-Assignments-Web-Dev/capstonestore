@@ -40,3 +40,40 @@
 .read-the-docs {
   color: #888;
 }
+
+.prodCard {
+  /* max-height: 225px; */
+  width: 425px;
+  padding: 20px;
+  margin: 30px;
+  float: left;
+  display: flex;
+  background-color: white;
+}
+
+.prodCard > img {
+  height: 125px;
+}
+
+.prodContainer {
+
+}
+
+.prodTitle {
+  padding: 25px;
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 500px;
+  grid-template-areas: "prodCard";
+}
+
+@media only screen and (max-width: 1150px) {
+  .container {
+  display: flex;
+  flex-direction: column;
+  }
+}
