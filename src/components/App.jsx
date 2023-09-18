@@ -1,35 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import '../style/index.css'
+import Header from './Header.jsx'
+import AllProducts from './AllProducts.jsx'
+import SelectedProduct  from './SelectedProduct.jsx';
+import '../style/App.css'
+import { useState } from "react";
 
-const App = () => {
-  const [pokemon, setPokemon] = useState([])
 
-  useEffect(() => {
-    const getAllData = async () => {
-      try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20')
-        const { results } = await response.json()
-        setPokemon(results)
-      } catch (err) {
-        console.error(err)
-      }
-    }
-    getAllData()
-  }, [])
+
+
+export default function App () {
+
+  const [selectedProductId, setSelectedProductId] = useState(null);
 
   return (
-    <div>
-      <p>Hello World</p>
-      {!!pokemon.length &&
-        pokemon.map((el, i) => {
-          return (
-            <div key={i}>
-              <h1>{el.name}</h1>
-            </div>
-          )
-        })}
-    </div>
-  )
+  <>
+
+<div className="app">
+
+  <Header />
+  <div className="container">
+
+{selectedProductId ? (
+  <SelectedProduct selectedProductId={selectedProductId}
+   setSelectedProductId={setSelectedProductId}
+  />
+
+) : (
+
+<AllProducts setSelectedProductId={setSelectedProductId} />
+
+)
+
 }
 
-export default App
+</div>
+
+</div>
+  
+
+  </>
+)}
