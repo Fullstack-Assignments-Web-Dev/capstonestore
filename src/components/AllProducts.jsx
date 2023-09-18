@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../style/App.css'
+import ProductCard from './ProductCard.jsx';
 
-const AllProducts = () => {
+function AllProducts( {setSelectedProductId} ) {
     const [products, setProducts] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -13,8 +14,8 @@ const AllProducts = () => {
                 const result = await response.json()
                 // console.table(result)
                 setProducts(result)
-            } catch (err) {
-                console.error(err)
+            } catch (error) {
+                console.error(error)
             }
         }
         fetchProducts()
@@ -38,19 +39,12 @@ const AllProducts = () => {
             </div>
             <br />
             <div className="container">
-                {filteredProducts.map((products) => {
-                    return (
-                        <div className="prodContainer">
-                         <div className="prodCard" key={products.id} onClick={() =>
-                            setSelectedProductId(products.id)}>
-                            <img className="thumbnail" key={products.image} src={products.image}/>
-                            <div className="prodTitle" key={products.title}>{products.title}</div>
-                            </div>
-                        </div>
-                    )
-                })}
+                    {filteredProducts.map((products) => {
+                        return (
+                        <ProductCard key={products.id} products={products} setSelectedProductId={setSelectedProductId}/> )
+                    })}
             
-            </div>       
+            </div> 
         </>
     )
 }
