@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import '../style/App.css'
+import '../../App.css'
 
 
 export default function ProductCard({ setSelectedProductId, products }) {
