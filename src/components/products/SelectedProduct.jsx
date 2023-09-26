@@ -1,4 +1,4 @@
-import '../style/App.css'
+import '../../App.css'
 import { useState, useEffect, } from 'react';
 
 
@@ -37,7 +37,7 @@ const SelectedProduct = ( {selectedProductId, setSelectedProductId } ) => {
           <img className="detail-image" src={product.image}/>
  
         <div className="deets">
-        <h2>Product Details</h2>
+        
           <p>{product.title}</p>
           <p>Price{product.price}</p>
           <p>Desicription{product.description}</p>
