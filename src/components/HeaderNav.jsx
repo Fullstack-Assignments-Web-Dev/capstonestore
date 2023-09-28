@@ -5,12 +5,7 @@ import { isLoggedIn } from './AJAXhelper'
 
 
 export default function HeaderNav() {
-  
-
-  
-
-
-
+      
     return (
       <>
       <div className='header-nav'>    
@@ -19,6 +14,7 @@ export default function HeaderNav() {
 { isLoggedIn() ? (
       <>
       <NavLink className="navbar-link" to="/cart">Cart</NavLink>
+      <NavLink className="navbar-link" to="/checkout">Checkout</NavLink>
       <LogoutButton />
       </>    
 
