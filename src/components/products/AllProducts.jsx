@@ -7,7 +7,7 @@ function AllProducts( {setSelectedProductId} ) {
     const [searchQuery, setSearchQuery] = useState('');
     const [category, setCategory] = useState('all');
     const [title, setTitle] = useState('');
-         
+             
     // FETCH ALL PRODUCTS
     useEffect(() => {
         const fetchProducts = async () => {
@@ -40,23 +40,6 @@ const filteredProducts = filteredCategory.filter(
         .includes(searchQuery.toLocaleLowerCase()) ||
       product.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-    // useEffect(() => {
-    //     const filtered = products.filter((product) =>
-    //         product.title.toLowerCase().includes(searchQuery.toLowerCase())
-    //     );
-    //     setFilteredProducts(filtered);
-    // }, [searchQuery, products]);
-
-
-// SORT PRODUCTS BY PRICE
-
-// if (sortPrice === "asc") {
-//     console.log("asc has run");
-//     filteredProducts.sort((a, b) => a.price - b.price);
-//   } else if (sortPrice === "desc") {
-//     filteredProducts.sort((a, b) => b.price - a.price);
-//   }
 
     return (
         <>
@@ -126,9 +109,7 @@ const filteredProducts = filteredCategory.filter(
                 onClick={() => {
                   setTitle("Electronics");
                   setCategory(`electronics`);
-                }}
-              >
-                Electronics
+                }} > Electronics
               </button>
 
             </div>
@@ -138,7 +119,10 @@ const filteredProducts = filteredCategory.filter(
             <div className="product-container">
                     {filteredProducts.map((products) => {
                         return (
-                        <ProductCard key={products.id} products={products} setSelectedProductId={setSelectedProductId}/> )
+                        <ProductCard
+                        key={products.id}
+                        products={products} 
+                        setSelectedProductId={setSelectedProductId}/> )
                     })}
             
             </div> 

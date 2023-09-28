@@ -1,5 +1,5 @@
 #root {
-  max-width: 80vw;
+  max-width: 77vw;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -74,10 +74,16 @@ body {
   border-radius: 10px;
   background-color: #90919075;
   color: white;
-  border: white 2px solid;
+  border: white 3px solid;
   box-shadow: 2px 2px #888888;
   text-transform: uppercase;
   font-size: small;
+  font-weight: bold;
+}
+
+.cash-only {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ALL PRODUCTS */
@@ -108,13 +114,14 @@ body {
   /* max-height: 225px; */
   position: relative;
   width: 300px;
-  height: 250px;
+  height: 300px;
   padding: 20px;
   margin: 15px;
   float: left;
   display: flex-wrap;
   background-color: white;
   border: solid #c7ced9 2px;
+  
 }
 
 .prodCard:hover {
@@ -126,10 +133,8 @@ body {
   height: 125px;
 }
 
-#single {
-/* 
-  display: table;
-  text-align: center; */
+.return-button {
+  float: right;
 }
 
 .prodTitle {
@@ -148,7 +153,6 @@ body {
 }
 
 .product-container {
-  /* display: grid; */
   grid-gap: 10px;
   grid-template-columns: 1fr 500px;
   grid-template-areas: "prodCard";
@@ -161,14 +165,8 @@ body {
 }
 
 .detail-image {
-  /* width: 400px; */
   max-height: 300px;
   
-}
-
-.deets {
-  /* width: 70vw;
-  margin: 0 auto; */
 }
 
 .searchProducts {
@@ -177,35 +175,26 @@ body {
 }
 
 @media only screen and (max-width: 864px) {
+  #root {
+    max-width: 100vw;
+  }
+  
   .container {
-  display: flex;
+  display: flex-wrap;
   flex-direction: column;
   /* width: 60vw; */
   }
-  .prodCard {
-    width: 70vw;
-    padding: 15px;
-    margin: 5px;
-    float: left;
-    display: flex;
-    background-color: white;
-    position: relative;
-  }
+
   .prodCard > img {
     height: 100px;
   }
-  .navs {
-    position: absolute;
-    float: right;
-    top: 100px;
-    right: 0px;
-  }
+
 
 }
 
 
 
-@media only screen and (max-width: 864px) {
+@media only screen and (max-width: 758px) {
   
   .navs {
     position: absolute;
@@ -217,7 +206,19 @@ body {
 
 }
 
+@media only screen and (max-width: 450px) {
+  
+  .navs {
+    /* position: absolute; */
+    float: right;
+    top: 70px;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    
+  }
 
+}
 
 .selected-product-container {
   height: auto;

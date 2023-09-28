@@ -2,11 +2,9 @@ import '../../App.css'
 import { useState, useEffect, } from 'react';
 
 
-
 const SelectedProduct = ( {selectedProductId, setSelectedProductId } ) => {
   const [product, setProduct] = useState(null);
-  
-  
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -33,22 +31,24 @@ const SelectedProduct = ( {selectedProductId, setSelectedProductId } ) => {
       {product ? (
         <>
  
+ <div className="return-button">
+      <button onClick={() => setSelectedProductId(null)}>Return</button>
+      </div>
  
           <img className="detail-image" src={product.image}/>
  
         <div className="deets">
         
           <p>{product.title}</p>
-          <p>Price{product.price}</p>
+          <p>Price: ${product.price.toFixed(2)}</p>
           <p>Desicription{product.description}</p>
           <p>Category: {product.category}</p>
           <p>Rating: {product.rating.rate}</p>
           <p>Rate Count: {product.rating.count}</p>
+          <button>Add to Cart</button>
 
        
-          <div className="button">
-      <button onClick={() => setSelectedProductId(null)}>Return</button>
-      </div>
+
       
 
           </div>
