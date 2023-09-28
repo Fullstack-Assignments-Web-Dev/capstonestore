@@ -1,5 +1,5 @@
 #root {
-  max-width: 70vw;
+  max-width: 80vw;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -29,9 +29,7 @@ body {
   flex-wrap: wrap;
 }
 
-.navs {
-  /* display: block; */
-}
+
 
 .header-nav  {
    margin: 20px;
@@ -63,8 +61,43 @@ body {
   box-shadow: 2px 2px #888888;
   text-transform: uppercase;
   font-size: small;
-  
-  
+}
+
+.navbar-link:hover {
+
+}
+
+.navbar-link a:hover,
+.active {
+  margin: 0px 15px 0px 0px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background-color: #90919075;
+  color: white;
+  border: white 2px solid;
+  box-shadow: 2px 2px #888888;
+  text-transform: uppercase;
+  font-size: small;
+}
+
+/* ALL PRODUCTS */
+/* -CATEGORY BUTTONS */
+
+.category-selector {
+  margin-left: 20px;
+}
+
+.cat-btn {
+  float: left;
+  margin: 0px 5px 0px 0px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background-color: #cacaca55;
+  color: black;
+  border: white 2px solid;
+  box-shadow: 2px 2px #888888;
+  text-transform: uppercase;
+  font-size: small;
 }
 
 .card {
@@ -74,11 +107,12 @@ body {
 .prodCard {
   /* max-height: 225px; */
   position: relative;
-  width: 425px;
+  width: 300px;
+  height: 250px;
   padding: 20px;
   margin: 15px;
   float: left;
-  display: flex;
+  display: flex-wrap;
   background-color: white;
   border: solid #c7ced9 2px;
 }
@@ -113,7 +147,7 @@ body {
   margin-right: 10px;
 }
 
-.container {
+.product-container {
   /* display: grid; */
   grid-gap: 10px;
   grid-template-columns: 1fr 500px;
@@ -142,7 +176,7 @@ body {
   margin-left: 25px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 864px) {
   .container {
   display: flex;
   flex-direction: column;
@@ -160,13 +194,35 @@ body {
   .prodCard > img {
     height: 100px;
   }
+  .navs {
+    position: absolute;
+    float: right;
+    top: 100px;
+    right: 0px;
+  }
 
 }
+
+
+
+@media only screen and (max-width: 864px) {
+  
+  .navs {
+    position: absolute;
+    float: right;
+    top: 100px;
+    right: 0px;
+    display: flex;
+  }
+
+}
+
+
 
 .selected-product-container {
   height: auto;
   width: auto;
-  padding: 25px 25px 0px 25px;
+  padding: 0px 25px ;
   margin: 0px;
   
 }
